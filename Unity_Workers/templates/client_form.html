@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client-form</title>
+
+    <!-- icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- roboto font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+</head>
+<body>
+    <div class="background-page">
+        <section class="container">
+            <div><a href="index.html" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
+            <header>Client Demand Form</header>
+            <form method="post" action="{% url 'client_form' %}" class="form">
+                {% csrf_token %}
+                
+                <div class="input-box">
+                    <label>Selected Type of Worker : {{worker_type}}</label>
+                </div>
+                
+                <div class="input-box">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" placeholder="Enter full name" required/>
+                </div>
+        
+                <div class="input-box">
+                    <label>Full Address of Worker Location</label>
+                    <input type="text" name="full_address" placeholder="Enter full address of worker location" required/>
+                </div>
+        
+                <div class="column">
+                    <div class="input-box">
+                        <label>Landmark</label>
+                        <input type="text" name="landmark" placeholder="Enter landmark (optional)">
+                    </div>
+                    <div class="input-box">
+                        <label>Pincode</label>
+                        <input type="text" name="pincode" placeholder="Enter pincode" required/>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="input-box">
+                        <label>Contact Number</label>
+                        <input type="number" name="contact_number" placeholder="Enter contact number" required/>
+                    </div>
+                    <div class="input-box">
+                        <label>Date of Work</label>
+                        <input type="date" name="date_of_work" required/>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="input-box">
+                        <label>Number of Workers Required</label>
+                        <input type="number" name="number_workers_required" placeholder="Enter required worker number" min="1" required/>
+                    </div>
+                    <div class="input-box">
+                        <label>Share Work Location (optional)</label>
+                        <input type="text" name="work_location_link" placeholder="Enter worker location link">
+                    </div>
+                </div>
+                
+                
+                <!-- <button type="submit" ><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_PGnuD0Uzo5bMk0" async> </script></button> -->
+                 <a id="button1" href="{% url 'payment_page' %}" onclick="swapButtons()">Proceed Payment</a>
+                <button id="button2" style="display:none;">Submit</button> 
+                <script>
+                 function swapButtons() { 
+                    document.getElementById('button1').style.display = 'none'; 
+                    document.getElementById('button2').style.display = 'inline'; 
+                    } 
+                </script>
+            </form>
+        </section>
+    </div>
+    
+
+</body>
+</html>

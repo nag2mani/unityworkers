@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- roboto font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bebas Neue font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+    font-family: roboto;
+}
+
+.header {
+    height: 100px;
+    width: 100vw;
+    background-color: #0F4A8A;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 50px;
+    width: 50px;
+    margin-left: 8vw;
+}
+
+.header .logo-name {
+    color: white;
+    font-size: 3vw;
+    font-weight: 600;
+    margin-left: 0.8vw;
+}
+
+.header .title{
+    color: white;
+    font-size: 2vw;
+    margin-left: 23vw;
+}
+
+.header .title-icon {
+    color: white;
+    font-size: 1.8vw;
+    margin-left: 0.8vw;
+}
+
+.header .cross-icon {
+    color: white;
+    font-size: 2.5vw;
+    margin-left: 25vw;
+}
+
+.container {
+    height: 90vh;
+    width: 100vw;
+    background-color: #F4F2EE;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20vh;
+}
+
+.container .block-1 {
+    height: 40vh;
+    width: 23vw;
+    /* background-color: aquamarine; */
+    border-radius: 15px;
+    border: grey 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .block-1 button {
+    height: 5vh;
+    width: 15vw;
+    background-color: #0F4A8A;
+    border-radius: 50px;
+    align-items: center;
+    border: none;
+    color: white;
+    font-size: 1vw;
+    margin-top: 2vh;
+}
+
+.container .block-1 p {
+    color: grey;
+    font-size: 0.7vw;
+    width: 15vw;
+    text-align: center;
+    margin-top: 0.8vh;
+}
+
+.container .block-1 .demand-summary {
+    font-size: 1.1vw;
+    font-weight: 500;
+    margin-right: 5vw;
+    margin-top: 2vh;
+    margin-bottom: 0.8vh;
+}
+
+.container .block-1 .demand-content {
+    height: 8vh;
+    width: 21vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+}
+
+.container .block-1 .demand-content p {
+    font-size: 0.9vw;
+    margin: 0.7vh 1vw;
+}
+
+.container .block-1 #total-cost {
+    color: #F07E41;
+    font-size: 1.1vw;
+    font-weight: 700;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+.container .block-2 {
+    height: 40vh;
+    width: 23vw;
+    /* background-color: aquamarine; */
+    border-radius: 15px;
+    border: grey 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .block-2 .line-1 {
+    margin: 2vh 2vw;
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.container .block-2 img {
+    height: 5vh;
+    margin-right: 10vw;
+}
+
+.container .block-2 .line-2 {
+    margin: 2vh 2vw;
+    font-size: 1.1vw;
+    font-weight: 500;
+} 
+
+.container .block-2 p {
+    color: grey;
+    font-size: 0.7vw;
+    margin: 0 2vw;
+    margin-top: 10vh;
+}
+
+@media (max-width:500px) {
+    .header {
+        height: 80px;
+    }
+
+    .header img {
+        height: 25px;
+        width: 25px;
+        margin-left: 6vw;
+    }
+    
+    .header .logo-name {
+        color: white;
+        font-size: 5vw;
+        font-weight: 600;
+        margin-left: 1.5vw;
+    }
+    
+    .header .title{
+        color: white;
+        font-size: 4vw;
+        margin-left: 10vw;
+        text-align: center;
+    }
+    
+    .header .title-icon {
+        color: white;
+        font-size: 3.5vw;
+        margin-left: 2vw;
+    }
+    
+    .header .cross-icon {
+        color: white;
+        font-size: 6vw;
+        margin-left: 10vw;
+    }
+
+    .container {
+        height: 90vh;
+        width: 100vw;
+        background-color: #F4F2EE;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2vh;
+    }
+    
+    .container .block-1 {
+        height: 40vh;
+        width: 70vw;
+        /* background-color: aquamarine; */
+        border-radius: 15px;
+        border: grey 2px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4vh;
+    }
+    
+    .container .block-1 button {
+        height: 5vh;
+        width: 55vw;
+        background-color: #0F4A8A;
+        border-radius: 50px;
+        align-items: center;
+        border: none;
+        color: white;
+        font-size: 3vw;
+        margin-top: 2vh;
+    }
+    
+    .container .block-1 p {
+        color: grey;
+        font-size: 1.8vw;
+        text-align: center;
+        margin-top: 0.8vh;
+        width: 40vw;
+    }
+    
+    .container .block-1 .demand-summary {
+        font-size: 4vw;
+        font-weight: 500;
+        margin-top: 2vh;
+        margin-bottom: 0.8vh;
+    }
+    
+    .container .block-1 .demand-content {
+        height: 8vh;
+        width: 21vw;
+        /* background-color: aquamarine; */
+        display: flex;
+        flex-direction: column;
+        margin-right: 20vw;
+    }
+    
+    .container .block-1 .demand-content p {
+        font-size: 2.5vw;
+        margin: 0px;
+        margin-top: 1vh;
+    }
+    
+    .container .block-1 #total-cost {
+        color: #F07E41;
+        font-size: 4vw;
+        font-weight: 700;
+        margin-bottom: 5vh;
+        margin-top: 2vh;
+    }
+    .container .block-2 {
+        height: 40vh;
+        width: 70vw;
+        /* background-color: aquamarine; */
+        border-radius: 15px;
+        border: grey 2px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container .block-2 .line-1 {
+        margin: 2vh 7vw;
+        font-size: 4vw;
+        font-weight: 500;
+    }
+    
+    .container .block-2 img {
+        height: 5vh;
+        margin-right: 32vw;
+    }
+    
+    .container .block-2 .line-2 {
+        margin: 2vh 6vw;
+        font-size: 4vw;
+        font-weight: 500;
+    } 
+    
+    .container .block-2 p {
+        color: grey;
+        font-size: 1.8vw;
+        margin: 0 2vw;
+        margin-top: 10vh;
+        width: 40vw;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <!-- header part  -->
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/uwc-logo.png' %}" alt="uwc">
+        </div>
+        <div class="logo-name">UWC</div>
+        <div class="title">Client Demand Form</div>
+        <div class="title-icon"><i class="fa-solid fa-circle-check"></i></i></div>
+        <div class="cross-icon"><i class="fa-solid fa-rectangle-xmark"></i></i></div>
+    </div>
+
+    <div class="container">
+        <div class="block-1">
+            <button class="pay-now"><a href="{% url 'create_payment' %}" style="text-decoration: none; color:white;">Pay now</a></button>
+            <p>By paying now, you agree to UWC's <u>privacy notice</u> and <u>conitions of use</u>.</p>
+            <hr>
+            <div class="demand-summary">Demand Summary</div>
+            <div class="demand-content">
+                <div class="line-1">
+                    <p class="worker-cost">Worker Cost : Rs. {{total_amount}}.00 </p>
+                </div>
+                <div class="line-2">
+                    <p class="uwc-margin">UWC's Margin : Rs. {{margin}}.00</p>
+                </div>
+            </div>
+            <hr>
+            <div class="total-cost">
+                <p id="total-cost">Demand Total : Rs. {{final_cost}}.00</p>
+                {{in_dollar}}
+            </div>
+            <p>You can contack us for any of you queries related to payment process, visit <u>UWC's contact page</u></p>
+        </div>
+
+
+
+
+
+        <div class="block-2">
+            <div class="line-1">All your payments are secured through:</div>
+            <img src="{% static 'images/paypal-img.png' %}" alt="paypal">
+            <hr>
+            <div class="line-2">For any payment related issue call on contact : +91 958-058-9181</div>
+            <p>You can contack us for any of you queries related to payment process, visit <u>UWC's contact page</u></p>
+        </div>
+    
+</body>
+</html>

@@ -15,8 +15,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    path('client_form/',views.client_form,name='client_form'),
+    path('home_page/',views.home_page,name='home_page'),
+    path('worker_login_page/',views.worker_login_page,name='worker_login_page'),
+    path('worker_registration_form/',views.worker_registration_form,name='worker_registration_form'),
+    path('logout/', views.logout_view, name='logout'),
+    path('username/<str:username>/',views.username,name='username'),
+    path('contract_form/',views.contract_form,name='contract_form'),
+    path('create_payment/', views.create_payment, name='create_payment'),
+    path('payment_success/', views.payment_success, name='payment_success'),
+    path('payment_cancel/', views.payment_cancel, name='payment_cancel'),
+    path('cashfree/payment/success/', views.payment_success, name='payment_success'),
+    path('cashfree/payment/failure/', views.payment_failure, name='payment_failure'),
+    path('worker_number/',views.worker_number,name='worker_number'),
+    path('payment_page',views.payment_page,name='payment_page'),
+
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

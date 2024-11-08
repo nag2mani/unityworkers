@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERNAME </title>
+      <!-- icon cdn -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- roboto font ember code -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
+      <!-- Bebas Neue font ember code -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+<style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+}
+
+.main_page {
+    height: 100vh;
+    width: 100%;
+    background-image: url("{% static 'images/workercode-pg.png' %}");
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    height: 10vw;
+    width: 100%;
+    margin: auto;
+}
+
+.header div{
+    height: 100%;
+    width: 100%;
+}
+
+.header .logo {
+    height: 50px;
+    width: 50px;
+    background-image: url("{% static 'images/uwc-logo.png' %}");
+    background-size: cover;
+    margin-right: 2vw;
+    margin-left: 3vw;
+    margin-top: 1vw;
+}
+
+.header .logo_name {
+    font-family: Bebas Neue,Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 3vw;
+    margin-top: 1vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 10vw);
+    margin-top: 8vh;
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+.container .your-code {
+    margin-top: 7vh;
+}
+
+.container .worker-code {
+    margin-top: 2vh;
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+.container div {
+    color: white;
+    font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+.container button {
+    height: 5vh;
+    width: 18vw;
+    background-color: white;
+    color: #0F4A8A;
+    font-weight: 600;
+    font-size: 1vw;
+    border-radius: 50px;
+    margin-top: 25vh;
+}
+@media (max-width:500px) {
+    .main_page {
+        background-image: url("{% static 'images/verticalcode-pg.png' %}");
+        background-size: cover;
+    }
+
+    .header .logo_name {
+        font-size: 8vw;
+        margin-top: 2vh;
+    }
+    
+    .header .logo {
+        height: 35px;
+        width: 35px;
+        margin-right: 5vw;
+        margin-top: 2vh;
+    }
+
+    .container {
+        height: calc(100% - 10vh);
+        margin-top: 23vh;
+        font-weight: 500;
+        font-size: 5vw;
+    }
+
+    .container .your-code {
+        margin-top: 8vh;
+    }
+
+    .container .worker-code {
+        margin-top: 2vh;
+        font-size: 9vw;
+        font-weight: 700;
+    }
+
+    .container button {
+        height: 5vh;
+        width: 40vw;
+        background-color: white;
+        color: #0F4A8A;
+        font-weight: 600;
+        font-size: 4vw;
+        border-radius: 50px;
+        margin-top: 30vh;
+    }
+}
+</style>
+
+</head>
+<body>
+    <div class="main_page">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="logo_name">UNITY WORKERS & CONSTRUCTION</div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="container">
+            <div class="welcome">Welcome, {{ full_name }} to team UWC</div>
+            <div class="your-code">Your Worker Code :</div>
+            <div class="worker-code">{{ username }}</div>
+            <button class="proceed"><a href="{% url 'home_page' %}" style="text-decoration: none;">Proceed</a></button>
+        </div>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

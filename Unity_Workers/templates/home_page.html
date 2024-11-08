@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWC/home-page</title>
+
+    <!-- link of swiper css cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+
+    <!-- icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- roboto font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bebas Neue font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .title-bar {
+          background-image: url("{% static 'images/titlebar-background-image.png' %}");
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <div class="title-bar">
+            <div class="title-bar-logo">
+                <div class="main-logo"></div>
+            </div>
+
+            <div class="title">
+                <p class="title-uwc">UNITY WORKERS AND CONSTRUCTIONS</p>
+                <div class="title-line">
+                    {% if user.is_authenticated %}
+        <h2>Welcome back, {{ username }}</h2>
+        <p>Your full name is: {{ full_name }}</p>
+    {% else %}
+        <p>Welcome to the Home Page!</p>
+    {% endif %}
+                </div>
+
+                
+
+            <div class="language">
+                <div class="laguage-icon"><i class="fa-solid fa-globe"></i></div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+
+        
+        <script>
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi'
+                }, 'google_translate_element');
+            }
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+        <div class="nav-bar">
+            <div class="hover-underline">
+                <a href="#" id="home"><span>Home</span></a>
+            </div>
+            <div class="hover-underline">
+                <a href="#client-page" id="client"><span>Client</span></a>
+            </div>
+            <div class="hover-underline">
+                <a href="#worker-page" id="worker"><span>Worker</span></a>
+            </div>
+            <div class="hover-underline">
+                <a href="#about-us-page" id="about-us"><span>About us</span></a>
+            </div>
+            
+            <div class="hover-underline">
+                <a href="#contact-us-page" id="contact-us"><span>Contact us</span></a>
+            </div>
+            
+
+            <div class="hover-underline">
+               
+            </div>
+            <div class="hover-underline">
+                {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+    {% else %}
+    <a href="{% url 'worker_login_page' %} " id="login"><span>Login</span></a>
+    <a href="{% url 'worker_registration_form' %}" id="register"><span>Register</span></a>
+    {% endif %}
+                
+                
+            </div>
+        </div>
+
+    </header>
+
+    <div class="hero-container">
+        <div class="hero-wrapper">
+            <img src="{% static 'images/hero-section-image1.png' %}" alt="" class="hero-image">
+            <img src="{% static 'images/hero-section-image2.png' %}" alt="" class="hero-image">
+            <img src="{% static 'images/hero-section-image3.png' %}" alt="" class="hero-image">
+            <img src="{% static 'images/hero-section-image2.png' %}" alt="" class="hero-image">
+        </div>
+    </div>
+
+    <div>
+        <a href="https://wa.me/+919580599181/?text=urlencodedtext" target="_main"><button  class="whatsapp-support">WhatsApp Support</button></a>
+    </div>
+
+
+    <!-- this section of code is for client page -->
+    <div id="client-page">
+
+
+        <div class="container swiper">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    {% for card in cards %}
+                    <li class="card-item swiper-slide">
+                        <!-- Wrap the entire content of the card with a link, but use JavaScript to handle form submission -->
+                        <a href="#" class="card-link" onclick="submitForm(this)">
+                            <img src="{{ card.image.url }}" alt="img" class="card-image">
+                            <p class="badge">{{ card.heading }}</p>
+                            <h2 class="card-title">{{ card.description }}<br><br>Per Day Wage: <b> Rs{{card.price}}</b></h2>
+                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+                        </a>
+                        
+                        <!-- Form that will be submitted when card is clicked -->
+                        <form method="post" action="{% url 'home_page' %}" class="submit-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="heading" value="{{ card.heading }}" style="display: none;">
+                            <button type="submit" style="display:none;">Submit</button> <!-- Hidden submit button -->
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <script>
+                    function submitForm(cardLink) {
+                        // Find the form inside the clicked card's parent list item
+                        const form = cardLink.closest('li').querySelector('.submit-form');
+                        form.submit();  // Submit the form
+                    }
+                </script>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+
+            </div>
+        </div>
+        <br>
+        
+        
+
+    </div>
+    <a href="{% url 'contract_form' %}"><b>we also provide full contract service, click to proceed</b></a>
+    <div>
+       <p>For Repairing contact<a href="https://wa.me/+919580599181/?text=urlencodedtext" target="_main" > 9580599181</a> </p> 
+    </div>
+    
+      <!-- this is section is for worker page -->
+      <div id="worker-page">
+        <div class="inner-page">
+
+            <div class="heading-div-worker"> 
+                <p class="title-of-worker">How to use the Website. <br> वेबसाइट का उपयोग कैसे कर l</p>
+                <p class="title-of-worker" id="title-2">Video tutorial : How to use the Website. <br> वीडियो ट्यूटोरियल: वेबसाइट का उपयोग कैसे करें l</p>
+            </div>
+            <div class="content">
+                <div id="text-area">
+                    <p class="text-step">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ut tenetur, dolorem deleniti soluta reiciendis hic! Cum tempora voluptatum reiciendis id quidem, soluta officia? Quia, sint? Non quam aperiam et?</p>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/__qcpB3rXV4?si=byxuRamX9LD9bBD1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+           
+    </div>
+
+    <!-- this section of code is for about section and contact us -->
+    
+    <div id="about-us-page">
+        dfgdfg
+
+    </div>
+    <div id="contact-us-page">
+    
+
+    </div>
+
+
+      
+    
+
+
+       
+
+    <!-- link of swiper js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- main script file -->
+     <script src="{% static 'js/sctipt.js' %}"></script>
+     
+</body>
+</html>

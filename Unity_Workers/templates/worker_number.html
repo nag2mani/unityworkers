@@ -1,0 +1,355 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- roboto font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bebas Neue font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    border: border-box;
+    font-family: roboto;
+}
+
+.header {
+    height: 100px;
+    width: 100vw;
+    background-color: #0F4A8A;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 50px;
+    width: 50px;
+    margin-left: 8vw;
+}
+
+.header .logo-name {
+    color: white;
+    font-size: 3vw;
+    font-weight: 600;
+    margin-left: 0.8vw;
+}
+
+.header .title{
+    color: white;
+    font-size: 2vw;
+    margin-left: 20vw;
+}
+
+.header .title-icon {
+    color: white;
+    font-size: 1.8vw;
+    margin-left: 0.8vw;
+}
+
+.header .cross-icon {
+    color: white;
+    font-size: 2.5vw;
+    margin-left: 25vw;
+}
+
+.container {
+    height: 90vh;
+    width: 100vw;
+    background-color: #F4F2EE;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container .block-1 .main-line {
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.container .block-1 .inner-block {
+    height: 70vh;
+    width: 35vw;
+    background-color: #F4F2EE;
+    border-radius: 12px;
+    border: 2px solid grey;
+    padding: 1vw 1.5vw;
+}
+
+.container .block-1 .inner-block .content-line {
+    padding: 1vh;
+    color: grey;
+    font-size: 1.1vw;
+}
+
+.container .block-1 .inner-block .last-line {
+    margin-top: 32vh;
+    font-size: 0.7vw;
+    width: 20vw;
+    text-align: center;
+    margin-left: 7vw;
+    color: #0F4A8A;
+}
+
+.container .block-2 {
+    height: 40vh;
+    width: 23vw;
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin-top: 4vh;
+    padding: 3vh 1.5vw;
+    font-weight: 500;
+}
+
+.container .block-2 form button {
+    height: 4.5vh;
+    width: 22vw;
+    background-color: #0F4A8A;
+    color: white;
+    font-size: 1vw;
+    border-radius: 50px;
+    border: none;
+    font-weight: 400;
+    margin-top: 2.5vh;
+}
+
+.container .block-2 form input {
+    width: 21vw;
+    height: 4vh;
+    border-radius: 5px;
+    margin-left: 1vh;
+    margin-top: 2vh;
+}
+
+.container .block-2 .line-2 {
+    margin-top: 3vh;
+    width: 18vw;
+    font-weight: 400;
+}
+
+
+.container .block-2 p {
+    font-size: 0.7vw;
+    color: grey;
+    width: 20vw;
+    text-align: center;
+    margin-top: 14vh;
+    margin-left: 2vw;
+    color: #0F4A8A;
+}
+
+@media (max-width:500px) {
+    .header {
+        height: 80px;
+    }
+
+    .header img {
+        height: 25px;
+        width: 25px;
+        margin-left: 6vw;
+    }
+    
+    .header .logo-name {
+        color: white;
+        font-size: 5vw;
+        font-weight: 600;
+        margin-left: 1.5vw;
+    }
+    
+    .header .title{
+        color: white;
+        font-size: 4vw;
+        margin-left: 8vw;
+        text-align: center;
+    }
+    
+    .header .title-icon {
+        color: white;
+        font-size: 3.5vw;
+        margin-left: 2vw;
+    }
+    
+    .header .cross-icon {
+        color: white;
+        font-size: 6vw;
+        margin-left: 10vw;
+    }
+
+    .container {
+        height: 90vh;
+        width: 100vw;
+        background-color: #F4F2EE;
+        padding-top: 20vh;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .container .block-1 .main-line {
+        font-size: 4vw;
+        font-weight: 500;
+        margin-bottom: 1vh;
+        margin-top: 8vh;
+    }
+    
+    .container .block-1 .inner-block {
+        height: 50vh;
+        width: 70vw;
+        background-color: #F4F2EE;
+        border-radius: 12px;
+        border: 2px solid grey;
+        padding: 1vw 1.5vw;
+    }
+    
+    .container .block-1 .inner-block .content-line {
+        padding: 1vh;
+        color: grey;
+        font-size: 3vw;
+    }
+    
+    .container .block-1 .inner-block .last-line {
+        margin-top: 21vh;
+        font-size: 2vw;
+        width: 50vw;
+        text-align: center;
+        margin-left: 8vw;
+        color: #0F4A8A;
+    }
+    
+    .container .block-2 {
+        height: 35vh;
+        width: 70vw;
+        border: 2px solid grey;
+        border-radius: 15px;
+        font-weight: 500;
+    }
+    
+    .container .block-2 form button {
+        height: 4.5vh;
+        width: 60vw;
+        background-color: #0F4A8A;
+        color: white;
+        font-size: 3.5vw;
+        border-radius: 50px;
+        border: none;
+        font-weight: 400;
+        margin-top: 2.5vh;
+        margin-left: 5vw;
+    }
+    
+    .container .block-2 form input {
+        width: 10vw;
+        height: 4vh;
+        border-radius: 5px;
+        margin-left: 1vh;
+    }
+
+    .container .block-2 form label {
+        margin-left: 6vw;
+    }
+    
+    .container .block-2 .line-2 {
+        margin-top: 3vh;
+        width: 60vw;
+        margin-left: 7vw;
+        font-weight: 400;
+    }
+    
+    .container .block-2 p {
+        font-size: 2.5vw;
+        color: grey;
+        width: 60vw;
+        text-align: center;
+        margin-top: 13vh;
+        margin-left: 5vw;
+        color: #0F4A8A;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/uwc-logo.png' %}" alt="uwc">
+        </div>
+        <div class="logo-name">UWC</div>
+        <div class="title">Client Demand Form</div>
+        <div class="title-icon"><i class="fa-solid fa-lock"></i></div>
+        <div class="cross-icon"><i class="fa-solid fa-rectangle-xmark"></i></i></div>
+    </div>
+
+    <div class="container">
+        <div class="block-1">
+           <div class="main-line">Price discription of all types of workers :</div>
+           <div class="inner-block">
+            <div class="content-line">
+                <p>Electrician per day way : Rs. 1000.00</p>
+                <p>UWC's Margin per no. of worker : Rs. 30.00</p>
+            </div>
+            <div class="content-line">
+                <p>Plumber per day way : Rs. 800.00</p>
+                <p>UWC's Margin per no. of worker : Rs. 30.00</p>
+            </div>
+            <div class="content-line">
+                <p>Painter per day way : Rs. 700.00</p>
+                <p>UWC's Margin per no. of worker : Rs. 30.00</p>
+            </div>
+            <div class="content-line">
+                <p>Majdoor per day way : Rs. 700.00</p>
+                <p>UWC's Margin per no. of worker : Rs. 30.00</p>
+            </div>
+            <div class="content-line">
+                <p>Rajgeer per day way : Rs. 700.00</p>
+                <p>UWC's Margin per no. of worker : Rs. 30.00</p>
+
+                <p class="last-line">You can contack us for any of you queries related to payment process, visit <u>UWC's contact page</u></p>
+            </div>
+           </div>
+           
+        </div>
+
+        <div class="block-2">
+            <form method="post" action="{% url 'worker_number' %}">
+                {% csrf_token %}
+                <label for="worker-no">Select the no. of  {{worker_type}} :</label>
+                <input type="number" class="worker-no"  name="worker_number">
+                <button type="submit">Proceed</button>
+            </form>
+            <div class="line-2">For any doubt related to form demand : +91 958-058-9181</div>
+            <p>You can contack us for any of you queries related to payment process, visit <u>UWC's contact page</u></p>
+        </div>
+       
+        
+    </div>
+
+    
+    
+</body>
+</html>
+
+
+
+
+
+<form method="post" action="{% url 'worker_number' %}">
+    {% csrf_token %}
+    <label for="">select numner of worker</label>
+    <input type="number" name="worker_number">
+    <button type="submit" >proceed</button>
+    <p>you have selected this card : {{worker_type}}</p>
+</form>

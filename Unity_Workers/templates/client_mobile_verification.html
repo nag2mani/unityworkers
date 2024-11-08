@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client verification/OTP</title>
+     <!-- icon cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- roboto font ember code -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <style>
+        .background-page{
+            background-image: url("{% static 'images/client-verification-background.png' %}");
+        }
+    </style>
+</head>
+<body>
+    <div class="background-page">
+        <div class="verification-page">
+            <div><a href="index.html" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
+            <div class="verification-statement"><p>Enter your Mobile number.<br>अपना मोबाइल नंबर दर्ज करें l</p></div>
+            <br>
+            <form action="{% url 'client_mobile_verification' %}" method="post" id="client-verification-form">
+                {% csrf_token %}
+                <input type="text" class="mobile-number" placeholder="Enter mobile number" name="mobile_number">
+                <br>
+                <div><button id="send-otp">Send OTP</button></a></div>
+            </form>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

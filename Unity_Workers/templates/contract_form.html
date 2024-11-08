@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client-form</title>
+
+    <!-- icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- roboto font ember code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}">
+</head>
+<body>
+    <div class="background-page">
+        <section class="container">
+            <div><a href="index.html" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
+            <header>Contract Form</header>
+            <form method="post" action="{% url 'contract_form' %}" class="form" onsubmit="showPopupAndRedirect()" >
+                {% csrf_token %}
+                
+                
+                <div class="input-box">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" placeholder="Enter full name" required/>
+                </div>
+        
+                <div class="input-box">
+                    <label>Full Address of Worker Location</label>
+                    <input type="text" name="full_address" placeholder="Enter full address of worker location" required/>
+                </div>
+        
+                <div class="column">
+                    <div class="input-box">
+                        <label>Landmark</label>
+                        <input type="text" name="landmark" placeholder="Enter landmark (optional)">
+                    </div>
+                    <div class="input-box">
+                        <label>Pincode</label>
+                        <input type="text" name="pincode" placeholder="Enter pincode" required/>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="input-box">
+                        <label>Contact Number</label>
+                        <input type="number" name="contact_number" placeholder="Enter contact number" required/>
+                    </div>
+                    <div class="input-box">
+                        <label>Date of Work</label>
+                        <input type="date" name="date_of_work" required/>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="input-box">
+                        <label>Type of Work</label>
+                        <input type="text" name="type_of_work" placeholder="Enter required type of work" min="1" required/>
+                    </div>
+                    <div class="input-box">
+                        <label>Share Work Location (optional)</label>
+                        <input type="text" name="work_location_link" placeholder="Enter worker location link">
+                    </div>
+                </div>
+                
+                
+                <button type="submit" >Submit</button>
+              
+            </form>
+        </section>
+    </div>
+    <script>
+        function showPopupAndRedirect() {
+            alert("Our team will contact you shortly!");
+            window.location.href = "{% url 'home_page' %}";
+        }
+    </script>
+
+</body>
+</html>
