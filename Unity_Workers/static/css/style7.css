@@ -103,3 +103,14 @@
     left: 478px;
     
 }
+
+@media (max-width:500px) {
+    .cancel-icon{
+        height: 20px;
+        width: 20px;
+        color: white;
+        position: relative;
+        top: 10px;
+        left: 50px;
+    }
+}

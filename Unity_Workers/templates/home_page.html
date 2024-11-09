@@ -34,31 +34,25 @@
 </head>
 <body>
     <header>
+        <!-- this is the code for main bar of the website -->
         <div class="title-bar">
-            <div class="title-bar-logo">
-                <div class="main-logo"></div>
+            <div class="logo"><img src="{% static 'images/uwc-logo.png' %}" alt="uwc"></div>
+            <h1 class="logo-name">UNITY WORKER AND CONSTRUCTION</h1>
+            <h1 class="logo-name-mobile">UWC</h1>
+            <div class="user-detail">
+                {% if user.is_authenticated %}
+                <div class="name">{{ full_name }}</div>
+                <div class="code">{{ username }}</div>
+                {% else %}
+                {% endif %}
             </div>
-
-            <div class="title">
-                <p class="title-uwc">UNITY WORKERS AND CONSTRUCTIONS</p>
-                <div class="title-line">
-                    {% if user.is_authenticated %}
-        <h2>Welcome back, {{ username }}</h2>
-        <p>Your full name is: {{ full_name }}</p>
-    {% else %}
-        <p>Welcome to the Home Page!</p>
-    {% endif %}
-                </div>
-
-                
-
-            <div class="language">
-                <div class="laguage-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="language-btn">
+                <div class="icon"><i class="fa-solid fa-globe"></i></div>
                 <div id="google_translate_element"></div>
             </div>
         </div>
 
-        
+        <!-- this is the JS code for google language translate in the main title bar  -->
         <script>
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
@@ -85,7 +79,7 @@
             </div>
             
             <div class="hover-underline">
-                <a href="#contact-us-page" id="contact-us"><span>Contact us</span></a>
+                <a href="#about-us-page" id="contact-us"><span>Contact us</span></a>
             </div>
             
 
@@ -96,7 +90,7 @@
                 {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit">Logout</button>
+                    <button type="submit" id="logout" class="hover-underline">Logout</button>
                 </form>
     {% else %}
     <a href="{% url 'worker_login_page' %} " id="login"><span>Login</span></a>
@@ -122,10 +116,11 @@
         <a href="https://wa.me/+919580599181/?text=urlencodedtext" target="_main"><button  class="whatsapp-support">WhatsApp Support</button></a>
     </div>
 
-
+    
+    <div class="rapid-service"> <p>UWC also provide Rapid Service</p><div class="form"><a href="#"><i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="contract-service"><p>UWC also provide <b>Contract Service</b> <div class="form"><a href="https://wa.me/+919580599181/?text=urlencodedtext"><i class="fa-solid fa-arrow-right"></i></a></div></p></div>
     <!-- this section of code is for client page -->
     <div id="client-page">
-
 
         <div class="container swiper">
             <div class="card-wrapper">
@@ -169,42 +164,66 @@
         
 
     </div>
-    <a href="{% url 'contract_form' %}"><b>we also provide full contract service, click to proceed</b></a>
-    <div>
-       <p>For Repairing contact<a href="https://wa.me/+919580599181/?text=urlencodedtext" target="_main" > 9580599181</a> </p> 
-    </div>
+    
+    
     
       <!-- this is section is for worker page -->
-      <div id="worker-page">
-        <div class="inner-page">
-
-            <div class="heading-div-worker"> 
-                <p class="title-of-worker">How to use the Website. <br> वेबसाइट का उपयोग कैसे कर l</p>
-                <p class="title-of-worker" id="title-2">Video tutorial : How to use the Website. <br> वीडियो ट्यूटोरियल: वेबसाइट का उपयोग कैसे करें l</p>
+    <div id="worker-page">
+        <div class="block1">
+            <div class="line1">How to Register</div>
+            <div class="line2">पंजीकरण कैसे करें .</div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis quod dicta modi, animi, repellat libero expedita suscipit veritatis esse ut, corrupti molestias! Molestiae rem obcaecati quis ut, voluptatem ratione. Dolores.</p>
+        </div>  
+        
+        <div class="block2">
+            <div class="line1">Video : How to Register</div>
+            <div class="line2">वीडियो : पंजीकरण कैसे करें .</div>
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/__qcpB3rXV4?si=byxuRamX9LD9bBD1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="content">
-                <div id="text-area">
-                    <p class="text-step">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ut tenetur, dolorem deleniti soluta reiciendis hic! Cum tempora voluptatum reiciendis id quidem, soluta officia? Quia, sint? Non quam aperiam et?</p>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/__qcpB3rXV4?si=byxuRamX9LD9bBD1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-
         </div>
-           
     </div>
 
     <!-- this section of code is for about section and contact us -->
     
     <div id="about-us-page">
-        dfgdfg
-
-    </div>
-    <div id="contact-us-page">
+        <div class="container-about">
+            <div class="about">
+                <div class="title-about">About UWC : What We Do ?</div>
+                <p>UWC mission to help increase income opportunities for construction workers also contractor. india has a major portion of construction workers like rajgeer, majdoor, painter,plumbers electrician & others.they are searching jobs and also they migrates one place to another place for grabbing opportunity our mission is to help make to this labour market is transparent and easy,thereby helping contractor and other needy peoples to find workers easily,we also provide door to door service and people get easier to access it . we believe that our team will definitely help you.</p>
+            </div>
+            <hr>
+            <div class="logo-box">
+                <div class="logo">
+                    <img src="{% static 'images/uwc-logo.png' %}" alt="uwc">
+                </div>
+                <div class="logo-name">UWC</div>
+            </div>
+        </div>
     
+        <div class="ender">
+            <div class="content-about">
+                <div class="part" id="part-1">
+                    <img src="{% static 'images/phone_uwc.png' %}" alt="phone">
+                    <div>+91 958-059-9181</div>
+                </div>
+        
+                <div class="part" id="part-2">
+                    <img src="{% static 'images/mail_uwc.png' %}" alt="phone">
+                    <div>unityworkersconstruction2024@gmail.com</div>
+                </div>
+        
+                <div class="part" id="part-3">
+                    <img src="{% static 'images/location_uwc.png' %}" alt="phone">
+                    <div>NIT Rourkela MSS Hostel Odisha 451111</div>
+                </div>
+            </div>
+    
+            <p style="color: grey; width: 25vw; text-align: center; font-size: 0.8vw; margin-top: 7vh; margin-left: 38vw;">Feel free to contact for any doubt, help & support regarding any field do visit uwc whatsapp support </p>
+        </div>
 
     </div>
+    
 
 
       
