@@ -7,28 +7,27 @@
 
 .background-page{
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url(client-background-image.png);
     background-size: cover;
    
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:20px;
 }
 
 .container{
     position: relative;
-    max-width: 700px;
-    width: 100%;
+    width: 50vw;
     background: #0F4A8A;
-    padding: 25px;
+    padding: 2vw;
     color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-top: 5vh;
 }
 
 .container header{
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     color: white;
     font-weight: 500;
     text-align: center;
@@ -36,12 +35,12 @@
 }
 
 .container .form{
-    margin-top: 30px;
+    margin-top: 5vh;
 }
 
 .form .input-box{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 3vh;
 
 }
 
@@ -51,11 +50,11 @@
 
 .form .input-box input{
     position: relative;
-    height: 50px;
+    height: 6vh;
     width: 95%;
     outline: none;
     color: #707070;
-    margin-top: 8px;
+    margin-top: 1.5vh;
     font-size: 1rem;
     border: 1px solid #ddd ;
     border-radius: 6px;
@@ -65,26 +64,26 @@
 
 
 .form .gender-box{
-    margin-top: 20px;
+    margin-top: 3vh;
 }
 
 .gender-box h3{
     color: white;
     font-size: 1rem;
     font-weight: 400;
-    margin-bottom: 8px;
+    margin-bottom: 2vh;
 
 }
 
 .form .column{
     display: flex;
-    column-gap: 30px;
+    column-gap: 5vw;
 }
 
 .form :where(.gender-option , .gender){
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    column-gap: 7vw;
 }
 
 .form .gender {
@@ -100,7 +99,7 @@
 }
 
 .form button{
-    height: 50px;
+    height: 6vh;
     width: 100%;
     color: #0F4A8A;
     font-size: 1.15rem;
@@ -109,7 +108,7 @@
     border-radius: 6px;
     transition: all 0.2s ease;
     font-weight: 500;
-    margin-top: 30px;
+    margin-top: 4vh;
 }
 .form button:hover{
     background-color: #F4F2EE;
@@ -119,7 +118,7 @@
 
 .file-button{
     background-color: white;
-    height: 50px;
+    height: 7vh;
     border: 1px solid transparent;
     border-radius: 8px;
     margin-top: 8px;
@@ -137,8 +136,161 @@
     font-weight: 600;
     font-size: 1.2rem;
     position: relative;
-    left: 680px;
+    left: 48vw;
+    top: 2vh;
 }
+
+#worker-input{
+    height: 17px;
+    width: 17px;
+}
+
+#worker-label{
+    height: 20px;
+    width: fit-content;
+}
+/* responsive */
+@media screen and (max-width:500px){
+    
+    .container{
+        position: relative;
+        width: 100vw;
+        background: #0F4A8A;
+        padding: 5vw;
+        color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .container header{
+        font-size: 5vw;
+        color: white;
+        font-weight: 500;
+        text-align: center;
+    
+    }
+    
+    .container .form{
+        margin-top: 5vh;
+    }
+    
+    .form .input-box{
+        width: 100%;
+        margin-top: 3vh;
+    
+    }
+    
+    .input-box label{
+        color: white;
+    }
+    
+    .form .input-box input{
+        position: relative;
+        height: 7vh;
+        width: 90%;
+        outline: none;
+        color: #707070;
+        margin-top: 1.5vh;
+        font-size: 1rem;
+        border: 1px solid #ddd ;
+        border-radius: 6px;
+        padding: 0 15px;
+    }
+    
+    .column {
+        flex-wrap: wrap;
+    }
+    
+    .form .gender-box{
+        margin-top: 3vh;
+    }
+    
+    .gender-box h3{
+        color: white;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 2vh;
+    
+    }
+    
+    #exp-input {
+        width: 90%;
+    }
+    .form .column{
+        display: flex;
+        column-gap: 3vw;
+    }
+    
+    .form :where(.gender-option , .gender){
+        display: flex;
+        align-items: center;
+        column-gap: 7vw;
+    }
+    
+    .form .gender {
+        column-gap: 5px;
+    }
+    
+    .gender input{
+        accent-color: rgb(232, 255, 83);
+    }
+    
+    .form :where(.gender input , .gender label){
+        cursor: pointer;
+    }
+    
+    .form button{
+        height: 6vh;
+        width: 100%;
+        color: #0F4A8A;
+        font-size: 1.15rem;
+        border: 2px solid white;
+        background-color: white;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        margin-top: 4vh;
+    }
+    .form button:hover{
+        background-color: #F4F2EE;
+        color: #0F4A8A;
+        border: 1px solid transparent;
+    }
+    
+    .file-button{
+        background-color: white;
+        height: 7vh;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        margin-top: 8px;
+    }
+    
+    #file-id{
+        margin-top: -9px;
+        border: none;
+        padding-top: 22px;
+    
+    }
+    
+    .cancel-icon{
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        position: relative;
+        left: 80vw;
+        top: 2.5vh;
+    }
+    
+    #worker-input{
+        height: 17px;
+        width: 17px;
+    }
+    
+    #worker-label{
+        height: 20px;
+        width: fit-content;
+    }
+}
+
 
 #worker-select{
     height: 35px;
@@ -150,12 +302,4 @@
     margin-left: 20px;
 }
 
-/* responsive */
-@media screen and (max-width:500px){
-    
-   .form .column{
-    flex-wrap: wrap;
 
-   }
-  
-}
