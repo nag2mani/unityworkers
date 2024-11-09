@@ -1,0 +1,6 @@
+# Enforce LF for JavaScript files
+*.js text eol=lf
+
+# For other types of files
+*.html text eol=lf
+*.css text eol=lf
