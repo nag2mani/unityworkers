@@ -35,6 +35,7 @@ urlpatterns = [
     path('cashfree/payment/failure/', views.payment_failure, name='payment_failure'),
     path('worker_number/',views.worker_number,name='worker_number'),
     path('payment_page',views.payment_page,name='payment_page'),
+    path('rapid_service/',views.rapid_service,name='rapid_service')
 
 ]
 

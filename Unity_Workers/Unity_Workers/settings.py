@@ -30,7 +30,7 @@ PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
 PAYPAL_CLIENT_SECRET = os.getenv('PAYPAL_CLIENT_SECRET')
 PAYPAL_MODE = os.getenv('PAYPAL_MODE', 'sandbox')
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = ["*"]
 
 # The res
@@ -158,6 +158,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
+# Base URL for static files
+STATIC_URL = '/static/'
+
+# Directory where collectstatic will collect static files for production
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Only needed for production (run collectstatic command)
+
+# Additional locations of static files
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Assuming your static files are in a "static" folder at the project level
+
+
 
 import os
 

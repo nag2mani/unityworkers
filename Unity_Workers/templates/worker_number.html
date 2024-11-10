@@ -290,7 +290,7 @@
         <div class="logo-name">UWC</div>
         <div class="title">Client Demand Form</div>
         <div class="title-icon"><i class="fa-solid fa-lock"></i></div>
-        <div class="cross-icon"><i class="fa-solid fa-rectangle-xmark"></i></i></div>
+        <a href="{% url 'home_page' %}"><div class="cross-icon"><i class="fa-solid fa-rectangle-xmark"></i></i></div></a>
     </div>
 
     <div class="container">
@@ -341,15 +341,3 @@
     
 </body>
 </html>
-
-
-
-
-
-<form method="post" action="{% url 'worker_number' %}">
-    {% csrf_token %}
-    <label for="">select numner of worker</label>
-    <input type="number" name="worker_number">
-    <button type="submit" >proceed</button>
-    <p>you have selected this card : {{worker_type}}</p>
-</form>

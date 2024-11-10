@@ -21,7 +21,7 @@
 <body>
     <div class="background-page">
         <section class="container">
-            <div><a href="index.html" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
+            <div><a href="{% url 'home_page' %}" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
             <header>Client Demand Form</header>
             <form method="post" action="{% url 'client_form' %}" class="form">
                 {% csrf_token %}

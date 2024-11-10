@@ -129,9 +129,25 @@ class Contracts(models.Model):
 
 
 
+
 class Worker_number(models.Model):
    worker_type = models.CharField(max_length=255, null=True, blank=True)
    worker_number = models.PositiveIntegerField(default=1)
 
 
 
+
+class Rapid_service(models.Model):
+
+    full_name = models.CharField(max_length=255, null=True, blank=True)
+    full_address = models.TextField(null=True, blank=True)
+    landmark = models.CharField(max_length=255, null=True, blank=True)
+    pincode = models.CharField(max_length=10, null=True, blank=True)
+    contact_number = models.CharField(max_length=15, null=True, blank=True)
+    date_of_work = models.DateField(null=True, blank=True)
+    type_of_work = models.TextField(null=True, blank=True)
+    work_location_link = models.URLField(null=True, blank=True)
+    time_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.type_of_work} - {self.time_created}"

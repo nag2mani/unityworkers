@@ -3,7 +3,7 @@ from django.utils.timezone import now
 from django.urls import reverse
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from main.models import WorkerRegistration, WorkerType, Contracts, Cards, WorkRequest, Worker_number
+from main.models import WorkerRegistration, WorkerType, Contracts, Cards, WorkRequest, Worker_number, Rapid_service
 from main.forms import WorkerRegistrationForm
 
 def index(request):
@@ -374,3 +374,31 @@ def create_payment(request):
         logging.error(f"PayPal Payment Creation Error: {error_details}")
         return HttpResponse("An error occurred while creating the payment. Please try again.")
 
+
+def rapid_service(request):
+    if request.method == "POST":
+        full_name = request.POST.get('full_name')
+        full_address = request.POST.get('full_address')
+        landmark = request.POST.get('landmark')
+        pincode = request.POST.get('pincode')
+        contact_number = request.POST.get('contact_number')
+        date_of_work = request.POST.get('date_of_work')
+        type_of_work = request.POST.get('type_of_work')
+        work_location_link = request.POST.get('work_location_link')
+
+        # Create and save the Contracts object
+        rapid = Rapid_service.objects.create(
+            full_name=full_name,
+            full_address=full_address,
+            landmark=landmark,
+            pincode=pincode,
+            contact_number=contact_number,
+            date_of_work=date_of_work,
+            type_of_work=type_of_work,
+            work_location_link=work_location_link
+        )
+
+        # Add a success message
+        messages.success(request, "Our team will contact you shortly!")
+        return redirect('home_page')
+    return render(request,'rapid_service.html')

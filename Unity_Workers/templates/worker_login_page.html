@@ -27,7 +27,7 @@
 <body>
     <div class="background-page">
         <div class="verification-page">
-            <div><a href="index.html" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
+            <div><a href="{% url 'home_page' %}" class="cancel-icon"><i class="fa-solid fa-xmark"></i></a></div>
             <div class="verification-statement"><p>Enter your Worker Code.<br>अपना कार्यकर्ता कोड दर्ज करें l</p></div>
             <br>
             <form action="{% url 'worker_login_page' %}" method="post" id="client-verification-form">

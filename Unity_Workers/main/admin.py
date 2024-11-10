@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cards, WorkerRegistration, WorkerType, WorkRequest, Contracts,Worker_number
+from .models import Cards, WorkerRegistration, WorkerType, WorkRequest, Contracts, Rapid_service
 
 from django.db.models import Count
 
@@ -48,5 +48,5 @@ class CardsAdmin(admin.ModelAdmin):
     list_display = ('heading', 'description')
 
 
-
+admin.site.register(Rapid_service)
 admin.site.register(Contracts)

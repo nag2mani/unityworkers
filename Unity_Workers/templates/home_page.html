@@ -35,7 +35,7 @@
 <body>
     <header>
         <!-- this is the code for main bar of the website -->
-        <div class="title-bar">
+        <div class="title-bar" style="z-index: 1000;" >
             <div class="logo"><img src="{% static 'images/uwc-logo.png' %}" alt="uwc"></div>
             <h1 class="logo-name">UNITY WORKER AND CONSTRUCTION</h1>
             <h1 class="logo-name-mobile">UWC</h1>
@@ -64,7 +64,7 @@
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
-        <div class="nav-bar">
+        <div class="nav-bar" style="z-index: 1000;" >
             <div class="hover-underline">
                 <a href="#" id="home"><span>Home</span></a>
             </div>
@@ -106,7 +106,7 @@
     <div class="hero-container">
         <div class="hero-wrapper">
             <img src="{% static 'images/hero-section-image1.png' %}" alt="" class="hero-image">
-            <img src="{% static 'images/hero-section-image2.png' %}" alt="" class="hero-image">
+            <img src="{% static 'images/hero-section-image5.png' %}" alt="" class="hero-image">
             <img src="{% static 'images/hero-section-image3.png' %}" alt="" class="hero-image">
             <img src="{% static 'images/hero-section-image2.png' %}" alt="" class="hero-image">
         </div>
@@ -117,8 +117,8 @@
     </div>
 
     
-    <div class="rapid-service"> <p>UWC also provide Rapid Service</p><div class="form"><a href="#"><i class="fa-solid fa-arrow-right"></i></a></div></div>
-    <div class="contract-service"><p>UWC also provide <b>Contract Service</b> <div class="form"><a href="https://wa.me/+919580599181/?text=urlencodedtext"><i class="fa-solid fa-arrow-right"></i></a></div></p></div>
+    <div class="rapid-service"> <p>UWC also provide Instant Service</p><div class="form"><a href="{% url 'rapid_service' %}"><i class="fa-solid fa-arrow-right"></i></a></div></div>
+    <div class="contract-service"><p>UWC also provide <b>Contract Service</b> <div class="form"><a href="{% url 'contract_form' %}"><i class="fa-solid fa-arrow-right"></i></a></div></p></div>
     <!-- this section of code is for client page -->
     <div id="client-page">
 
@@ -215,7 +215,7 @@
         
                 <div class="part" id="part-3">
                     <img src="{% static 'images/location_uwc.png' %}" alt="phone">
-                    <div>NIT Rourkela MSS Hostel Odisha 451111</div>
+                    <div style="width: 15vw;" >177 Mahaveer Market, Babaganj Pratapgarh Uttar Pradesh</div>
                 </div>
             </div>
     
